@@ -20,7 +20,9 @@ function App() {
 
       <HangmanDrawings />
       <HangmanWord />
-      <Keyboard />
+      <div style={{ alignSelf: 'stretch' }}>
+        <Keyboard />
+      </div>
     </div>
   )
 }
