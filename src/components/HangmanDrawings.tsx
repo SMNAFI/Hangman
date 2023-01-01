@@ -1,6 +1,10 @@
 import React from 'react'
 
-function HangmanDrawings() {
+type HangmanDrawingsProps = {
+  numOfGuesses: number
+}
+
+function HangmanDrawings({ numOfGuesses }: HangmanDrawingsProps) {
   const HEAD = (
     <div
       style={{
@@ -88,14 +92,11 @@ function HangmanDrawings() {
     />
   )
 
+  const BODY_PART = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
+
   return (
     <div style={{ position: 'relative' }}>
-      {HEAD}
-      {BODY}
-      {RIGHT_ARM}
-      {LEFT_ARM}
-      {RIGHT_LEG}
-      {LEFT_LEG}
+      {BODY_PART.slice(0, numOfGuesses)}
 
       <div
         style={{
